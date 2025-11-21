@@ -112,6 +112,22 @@ const reserve_configs: ReserveConfigV2[] = [
     supply_cap: BigInt(9_500_000e7), // ~ $10M
     enabled: true,
   },
+  // TESOURO
+  {
+    index: 4, // Does not matter
+    decimals: 7,
+    c_factor: 8000000, // (0_9800000)
+    l_factor: 8000000, // (0_9800000)
+    util: 5000000, // (0_9000000)
+    max_util: 9000000, // (0_9800000)
+    r_base: 100000, // (0_0050000)
+    r_one: 200000, // (0_0500000)
+    r_two: 1000000, // (0_1000000)
+    r_three: 50000000,
+    reactivity: 20,
+    supply_cap: BigInt(23_900_000e7), // ~ $5M
+    enabled: true,
+  },
 ];
 
 // TODO: Handle additional reserve for Tesouro later
@@ -128,6 +144,11 @@ const poolEmissionMetadata: ReserveEmissionMetadata[] = [
   },
   {
     res_index: 3, // second reserve
+    res_type: 1, // 0 for borrow emissions : 1 for supply emissions
+    share: BigInt(1e7), // Share of total emissions
+  },
+  {
+    res_index: 4, // second reserve
     res_type: 1, // 0 for borrow emissions : 1 for supply emissions
     share: BigInt(1e7), // Share of total emissions
   },
