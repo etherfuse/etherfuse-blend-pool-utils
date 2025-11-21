@@ -29,3 +29,13 @@ run = "node ./lib/v2/user-scripts/deploy-pool.js testnet $$ADMIN"
 depends = ["build"]
 description = "Get the backstop threshold for the Etherfuse Pool on the testnet"
 run = "node ./lib/v2/user-scripts/get-backstop-threshold.js testnet"
+
+[tasks."deploy:mainnet"]
+depends = ["build"]
+description = "Deploy the Etherfuse Pool on the mainnet"
+run = "node ./lib/v2/user-scripts/deploy-pool.js mainnet $$ADMIN"
+
+[tasks."get-backstop-threshold:mainnet"]
+depends = ["build"]
+description = "Get the backstop threshold for the Etherfuse Pool on the mainnet"
+run = "node ./lib/v2/user-scripts/get-backstop-threshold.js mainnet"
